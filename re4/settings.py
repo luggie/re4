@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,8 +21,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n0e()m*n(sbhh)d@)yjmdnyv$ozi+(5rc6gf3=-ixwnis(8o6%'
+SECRET_KEY = config("SECRET_KEY") # this is to replace the secret key you cut away before
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
